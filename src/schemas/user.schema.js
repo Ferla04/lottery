@@ -7,3 +7,12 @@ export const createUserSchema = Joi.object({
   phone: phone.required(),
   name: name.required()
 })
+
+export const updateUserSchema = Joi.object({
+  phone: phone.required(),
+  name: name.required()
+})
+
+export const deleteUserSchema = Joi.object({
+  phone: phone.required()
+})
