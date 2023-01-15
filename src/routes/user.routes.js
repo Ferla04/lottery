@@ -1,14 +1,14 @@
 import express from 'express'
-import * as userControllers from '../controllers/user.controllers.js'
 import { validatorHandler } from '../middlewares/index.js'
+import { createUser, deleteUser, getUsers, updateUser } from '../controllers/user.controllers.js'
 import { createUserSchema, deleteUserSchema, updateUserSchema } from '../schemas/user.schema.js'
 
 const router = express.Router()
 
 router
-  .get('/', userControllers.getUsers)
-  .post('/', validatorHandler(createUserSchema), userControllers.createUser)
-  .put('/:phone', validatorHandler(updateUserSchema), userControllers.updateUser)
-  .delete('/:phone', validatorHandler(deleteUserSchema), userControllers.deleteUser)
+  .get('/', getUsers)
+  .post('/', validatorHandler(createUserSchema), createUser)
+  .put('/:phone', validatorHandler(updateUserSchema), updateUser)
+  .delete('/:phone', validatorHandler(deleteUserSchema), deleteUser)
 
 export default router

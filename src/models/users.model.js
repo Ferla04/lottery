@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import sequelize from '../../database/sqlite.js'
 
-const tableName = 'users'
+export const tableName = 'users'
 
 export const User = sequelize.define(
   tableName,
